@@ -25,6 +25,10 @@ class RatingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setupRatingAndAnimate()
     }
     
@@ -34,8 +38,10 @@ class RatingViewController: UIViewController {
     
     func setupRatingAndAnimate() {
         let trackLayer = CAShapeLayer()
-        let center = CGPoint(x: holderView.center.x - 20, y: holderView.center.y - 20)
-        let path = UIBezierPath(arcCenter: center, radius: 80, startAngle: -CGFloat.pi/2, endAngle: 1.5 * CGFloat.pi, clockwise: true)
+        let position = holderView.convert(CGPoint.zero, to: self.view)
+        let x = position.x + holderView.bounds.width/2
+        let y = position.y + holderView.bounds.height/2
+        let path = UIBezierPath(arcCenter: CGPoint(x: x, y: y), radius: 80, startAngle: -CGFloat.pi/2, endAngle: 1.5 * CGFloat.pi, clockwise: true)
         trackLayer.path = path.cgPath
         trackLayer.strokeColor = UIColor.lightGray.cgColor
         trackLayer.lineWidth = 10

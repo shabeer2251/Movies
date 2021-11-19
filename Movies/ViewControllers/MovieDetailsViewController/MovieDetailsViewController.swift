@@ -68,7 +68,6 @@ class MovieDetailsViewController: UIViewController {
     
     func setupUI() {
         setupRatingView()
-        //TODO: embed everything in scrollview
         StyleKit.applyMediumLabelStyle(label: titleAndReleaseDateLabel)
         StyleKit.applyRegularLabelStyle(label: plotLAbel)
         StyleKit.applyMediumLabelStyle(label: genreLabel)
