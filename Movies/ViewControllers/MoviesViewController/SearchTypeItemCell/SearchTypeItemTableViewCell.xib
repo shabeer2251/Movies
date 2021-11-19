@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="KGk-i7-Jjw" customClass="SearchTypeItemTableViewCell" customModule="Movies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="294.33333333333331" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXB-PX-hdu">
+                        <rect key="frame" x="26.000000000000014" y="27" width="250.33333333333337" height="56"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zlz-Q0-jsv">
+                        <rect key="frame" x="10" y="99" width="274.33333333333331" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Wss-Mi-D9f"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="zlz-Q0-jsv" secondAttribute="bottom" id="Hao-tS-beu"/>
+                    <constraint firstAttribute="trailing" secondItem="zlz-Q0-jsv" secondAttribute="trailing" constant="10" id="KSZ-fK-tZC"/>
+                    <constraint firstItem="TXB-PX-hdu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="X2F-ca-jP5"/>
+                    <constraint firstItem="TXB-PX-hdu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="ZpW-rw-Ng2"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="TXB-PX-hdu" secondAttribute="trailing" constant="10" id="feK-5Z-SED"/>
+                    <constraint firstItem="zlz-Q0-jsv" firstAttribute="top" secondItem="TXB-PX-hdu" secondAttribute="bottom" constant="16" id="kUf-I2-Z6w"/>
+                    <constraint firstItem="zlz-Q0-jsv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nEk-53-9BK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="seperatorView" destination="zlz-Q0-jsv" id="yda-ta-Vsf"/>
+                <outlet property="titleLabel" destination="TXB-PX-hdu" id="LuV-5t-5lX"/>
+            </connections>
+            <point key="canvasLocation" x="74" y="123"/>
+        </tableViewCell>
+    </objects>
+</document>
