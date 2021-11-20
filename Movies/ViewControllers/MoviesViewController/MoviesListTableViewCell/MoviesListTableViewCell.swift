@@ -30,6 +30,7 @@ class MoviesListTableViewCell: UITableViewCell {
         self.languageLabel.text = movie.language
         self.yearLabel.text = movie.year
         self.posterImageView.downloadContentFromUrl(url: movie.poster ?? "")
+        self.layoutIfNeeded()
     }
     
     override func prepareForReuse() {
