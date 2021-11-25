@@ -22,6 +22,8 @@ class RatingViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: Viewcontroller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -36,6 +38,7 @@ class RatingViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: UI & Animation
     func setupRatingAndAnimate() {
         let trackLayer = CAShapeLayer()
         let position = holderView.convert(CGPoint.zero, to: self.view)

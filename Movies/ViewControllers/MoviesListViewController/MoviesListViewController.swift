@@ -51,6 +51,7 @@ class MoviesListViewController: UIViewController {
     }
 }
 
+// MARK: UITableViewDelegate, UITableViewDataSource
 extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.dataSource.count

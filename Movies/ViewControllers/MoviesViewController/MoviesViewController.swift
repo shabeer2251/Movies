@@ -53,6 +53,7 @@ class MoviesViewController: UIViewController {
     }
 }
 
+// MARK: UITableViewDataSource, UITableViewDelegate
 extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,6 +81,7 @@ extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
+// MARK: UISearchBarDelegate
 extension MoviesViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

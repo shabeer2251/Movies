@@ -37,7 +37,7 @@ class MoviesListViewModel {
             }
         }
     }
-    
+    // MARK: MoviesListViewNavigationDelegate Methods
     func handleBack() {
         self.navigationDelegate?.handleMoviesListBack()
     }

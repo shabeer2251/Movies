@@ -69,7 +69,7 @@ class AppCoordinator {
 
 }
 
-
+// MARK: MoviesNavigationDelegate
 extension AppCoordinator: MoviesNavigationDelegate {
     func handleMovieSearchTypeItemSelection(item: MovieRepresentable){
         if let item = item as? MovieSearchTypeItem {
@@ -80,6 +80,7 @@ extension AppCoordinator: MoviesNavigationDelegate {
     }
 }
 
+// MARK: MoviesSearchItemListNavigationDelegate
 extension AppCoordinator: MoviesSearchItemListNavigationDelegate {
     func handleMovieItemSelection(movieSearchTypeItem: MovieSearchTypeItem, searchItem: MovieRepresentable) {
         if let item = searchItem as? Movie {
@@ -95,6 +96,7 @@ extension AppCoordinator: MoviesSearchItemListNavigationDelegate {
     
 }
 
+// MARK: MoviesListViewNavigationDelegate
 extension AppCoordinator: MoviesListViewNavigationDelegate {
     func handleMoviesListSelection(movie: Movie) {
         performTransition(transition: .movieDetails(movie: movie))
@@ -105,6 +107,7 @@ extension AppCoordinator: MoviesListViewNavigationDelegate {
     }
 }
 
+// MARK: MovieDetailsNavigationDelegate
 extension AppCoordinator: MovieDetailsNavigationDelegate {
     func handleRating(rating: Ratings) {
         performTransition(transition: .ratings(rating: rating))

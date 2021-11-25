@@ -24,6 +24,7 @@ class MoviesSeaarchItemListViewModel {
         self.setupDataSource()
     }
     
+    // MARK: Helper Methods
     func setupDataSource() {
         switch movieSearchTypeItem {
         case .allMovies:
@@ -82,6 +83,7 @@ class MoviesSeaarchItemListViewModel {
        
     }
     
+    // MARK: MoviesSearchItemListNavigationDelegate Methods
     func handleBack() {
         self.navigationDelegate?.handleMoviesSeaarchItemListBack()
     }

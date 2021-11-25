@@ -58,6 +58,7 @@ class MoviesSearchItemListViewController: UIViewController {
 
 }
 
+// MARK: UITableViewDelegate, UITableViewDataSource
 extension MoviesSearchItemListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.dataSource.count
@@ -84,6 +85,7 @@ extension MoviesSearchItemListViewController: UITableViewDelegate, UITableViewDa
     
 }
 
+// MARK: UISearchBarDelegate
 extension MoviesSearchItemListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.setupDataSourceBasedOnSearchText(searchText: searchText)
