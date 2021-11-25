@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MovieRepresentable {
-    
+    var description: String { get }
 }
 
 

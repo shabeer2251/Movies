@@ -43,6 +43,10 @@ struct Movie: Codable, MovieRepresentable {
         case ratings = "Ratings"
     }
     
+    var description: String {
+        return self.title ?? ""
+    }
+    
     func willSatisfySearchText(searchText: String) -> Bool {
         if let title = self.title?.lowercased(), title.contains(searchText) {
             return true

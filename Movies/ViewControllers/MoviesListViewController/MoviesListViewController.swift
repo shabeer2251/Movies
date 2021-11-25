@@ -47,7 +47,7 @@ class MoviesListViewController: UIViewController {
         tableView.dataSource = self
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(UINib(nibName: "SearchTypeItemTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTypeItemTableViewCell")
+        tableView.register(UINib(nibName: "MoviesListTableViewCell", bundle: nil), forCellReuseIdentifier: "MoviesListTableViewCell")
     }
 }
 
@@ -57,8 +57,8 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTypeItemTableViewCell", for: indexPath) as? SearchTypeItemTableViewCell else { return UITableViewCell() }
-        cell.setupCell(title: self.viewModel.dataSource[indexPath.row].title ?? "")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesListTableViewCell", for: indexPath) as? MoviesListTableViewCell else { return UITableViewCell() }
+        cell.setupCell(movie: self.viewModel.dataSource[indexPath.row])
         return cell
     }
     

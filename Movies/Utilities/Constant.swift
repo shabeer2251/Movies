@@ -20,4 +20,9 @@ enum MovieSearchTypeItem: String, MovieRepresentable, CaseIterable {
     case genre = "Genre"
     case directors = "Directors"
     case actors = "Actors"
+    case allMovies = "All Movies"
+    
+    var description: String {
+        return self.rawValue
+    }
 }

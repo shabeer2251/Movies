@@ -81,8 +81,12 @@ extension AppCoordinator: MoviesNavigationDelegate {
 }
 
 extension AppCoordinator: MoviesSearchItemListNavigationDelegate {
-    func handleMovieItemSelection(movieSearchTypeItem: MovieSearchTypeItem, searchItem: String) {
-        performTransition(transition: .moviesList(item: movieSearchTypeItem, title: searchItem))
+    func handleMovieItemSelection(movieSearchTypeItem: MovieSearchTypeItem, searchItem: MovieRepresentable) {
+        if let item = searchItem as? Movie {
+            performTransition(transition: .movieDetails(movie: item))
+        } else {
+            performTransition(transition: .moviesList(item: movieSearchTypeItem, title: searchItem.description))
+        }
     }
     
     func handleMoviesSeaarchItemListBack() {

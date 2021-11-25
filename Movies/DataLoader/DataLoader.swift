@@ -11,12 +11,18 @@ class DataLoader {
     
     static let shared = DataLoader()
     private init() { }
+    var allMovies: [Movie] = []
     
     func allMovies(completion: (Result<[Movie], Error>) -> Void) {
+        guard allMovies.isEmpty else {
+            completion(.success(self.allMovies))
+            return
+        }
         guard let url = Bundle.main.url(forResource: "movies", withExtension: "json") else { return }
         do {
             let data = try Data(contentsOf: url)
             let movies = try JSONDecoder().decode([Movie].self, from: data)
+            self.allMovies = movies
             completion(.success(movies))
         } catch {
             completion(.failure(error))
@@ -40,6 +46,8 @@ class DataLoader {
                     case .directors:
                         //TODO: handle N/A
                         items = eachItem.director?.components(separatedBy: ", ") ?? []
+                    case .allMovies:
+                        items = allMovies.map({ $0.title ?? ""})
                     }
                     items.forEach { item in
                         if !result.contains(item), !item.isEmpty, item != "N/A" {
@@ -68,6 +76,8 @@ class DataLoader {
                         result = movies.filter( {($0.actors ?? "").contains(searchBy)})
                     case .directors:
                         result = movies.filter( {($0.director ?? "").contains(searchBy)})
+                    case .allMovies:
+                        result = allMovies
                     }
                 //TO DO: sort
                 completion(.success(result))

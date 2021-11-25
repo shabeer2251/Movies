@@ -28,3 +28,9 @@ extension String {
         }
     }
 }
+
+extension String: MovieRepresentable {
+    var description: String {
+        return self
+    }
+}
